@@ -105,7 +105,7 @@ function prettyMessage(pr2user, github2provider, provider) {
         const mention = github2provider[obj.login] ?
           `@${github2provider[obj.login]}` :
           `@${obj.login}`;
-        message += `${mention}, la PR [${obj.title}](${obj.url}) attend ta revue\n`;
+        message += `[PR ${obj.title}](${obj.url}) : ${mention}\n`;
         break;
       }
       case 'rocket': {
