@@ -103,9 +103,9 @@ function prettyMessage(pr2user, github2provider, provider) {
     switch (provider) {
       case 'slack': {
         const mention = github2provider[obj.login] ?
-          `<@${github2provider[obj.login]}>` :
+          `@${github2provider[obj.login]}` :
           `@${obj.login}`;
-        message += `Hey ${mention}, the PR "${obj.title}" is waiting for your review: ${obj.url}\n`;
+        message += `${mention}, la PR [${obj.title}](${obj.url}) attend ta revue\n`;
         break;
       }
       case 'rocket': {
